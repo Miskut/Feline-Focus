@@ -1,0 +1,875 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url('2.PNG');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.0); /* Черный цвет с прозрачностью */
+}
+
+.logo {
+    color: #FFA500;
+    font-size: 30px;
+
+    background-color: #6A5ACD;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+
+    text-decoration: none;
+   
+}
+
+
+.navbar nav a {
+    color: rgb(0, 0, 0);
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.navbar .donate {
+    font-family:sans-serif ;
+    font-size: 20px;
+    color: #ff9600;
+    font-weight: 900;
+}
+
+.navbar .login {
+size: 50%;
+    color: lightgray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+
+    /* Основная кнопка "Войти" */
+
+    .login-btn {
+        background-color: #6A5ACD;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    
+    .login-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Модальное окно */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      display: none;
+    }
+    .modal-content {
+      background: white;
+      width: 600px;
+      padding: 80px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    /* Кнопки в модальном окне */
+    .auth-btn {
+      display: block;
+      width: 100%;
+      padding: 10px 20px;
+      margin: 10px 0;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .auth-btn.google {
+      background-color: #db4343;
+    }
+    .auth-btn:hover {
+      background-color: #45a049;
+    }
+    .auth-btn.google:hover {
+      background-color: #c53929;
+    }
+    /* Статичный шарик2 */
+    .static-sphere2 {
+      position: absolute;
+      top: 10px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background-color: #7f4deb;
+      border-radius: 50%;
+    }
+
+    /* Статичный шарик */
+    .static-sphere {
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      width: 20px;
+      height: 20px;
+      background-color: #ff69b4;
+      border-radius: 50%;
+    }
+
+    /* Анимация пульсации */
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    /* Анимация вращения */
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+.login-button:hover {
+    background-color: #483D8B;
+}
+
+.main-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.main-content h2 {
+    font-size: 48px;
+    color: #333;
+}
+
+.main-content p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.start-play-button {
+    background-color: #32CD32;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.start-play-button:hover {
+    background-color: #228B22;
+}
+
+.start-text {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+}
+
+
+.main-content {
+    position: relative;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/*анимация*/
+
+/* Верхняя часть (навигация) — появление справа налево */
+.navbar {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 0s forwards; /* Запуск анимации при загрузке */
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Центральная надпись — медленное появление */
+.main-content h2 {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+    animation-delay: 1s; /* Задержка, чтобы появилось после верхней части */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Остальная часть текста и кнопки также могут медленно появляться */
+.main-content p, .start-play-button, .start-text {
+    opacity: 0;
+    animation: fade-in 2s forwards;
+    animation-delay: 1s; /* Настройте задержку для последовательного появления */
+}
+
+
+
+
+
+
+/* Основные анимации для десктопа */
+.navbar {
+    opacity: 0;
+    transform: translateX(100%);
+    animation: slide-in 1s forwards;
+}
+
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.main-content h2 {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.main-content p, .start-play-button, .start-text {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+    animation-delay: 1s;
+}
+
+
+
+
+
+
+
+  
+/* Общий стиль для мобильных экранов */
+@media (max-width: 768px) {
+    /* Настройка навигации */
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        margin-right: 50px; /* Сильное смещение вправо */
+    }
+
+    .navbar nav a {
+        margin: 12px 0;
+        font-size: 18px;
+        display: block;
+    }
+
+    /* Стили для основного контента */
+    .main-content {
+        padding: 80px 40px; /* Значительное удлинение вниз */
+        text-align: center;
+        margin-right: 50px; /* Сильное смещение вправо */
+    }
+
+    .main-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .main-content p {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    /* Кнопка "Начать учиться" */
+    .start-play-button {
+        font-size: 20px;
+        padding: 18px 36px;
+        width: 90%; /* Расширение кнопки для мобильного экрана */
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+/* Дополнительная настройка для очень маленьких экранов */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px;
+        margin-right: 30px; /* Смещение вправо для маленьких экранов */
+    }
+
+    .main-content {
+        padding: 60px 30px;
+        margin-right: 30px;
+    }
+
+    .main-content h2 {
+        font-size: 24px;
+    }
+
+    .start-play-button {
+        font-size: 18px;
+        padding: 16px 32px;
+        width: 100%;
+    }
+}
+
+
+
+
+/* Адаптивная версия для планшетов */
+@media only screen and (min-width: 768px) and (max-width: 1920x) {
+    /* Настройка навигации */
+    .navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .navbar nav a {
+        margin: 0 15px;
+        font-size: 18px;
+    }
+
+    /* Стили для основного контента */
+    .main-content {
+        padding: 60px 30px;
+        text-align: center;
+    }
+
+    .main-content h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .main-content p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* Кнопка "Начать учиться" */
+    .start-play-button {
+        font-size: 20px;
+        padding: 15px 30px;
+        width: 80%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Новости */
+
+
+  
+.news {
+    display: flex;
+    justify-content: space-around;
+    padding: 30px;
+  }
+  
+  .news-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .news-item img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  .news-item h2 {
+    font-size: 1.5em;
+    margin-top: 15px;
+  }
+  
+  .news-item p {
+    color: #555;
+  }
+  
+  .news-item a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .news-item:hover {
+    transform: translateY(-10px);
+  }
+  
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+/* Анимация плавного появления */
+.news-item {
+    opacity: 0;
+    animation: fade-in 2s ease-in-out forwards;
+    animation-delay: 1.5s; /* Задержка перед началом анимации */
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .chat-window {
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+  .chat-header {
+    background-color: #cc9b1d;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  .chat-header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .chat-header .chat-title {
+    font-size: 16px;
+    font-weight: bold;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  .chat-body {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  .chat-message {
+    margin: 5px 0;
+    padding: 8px;
+    border-radius: 8px;
+    max-width: 90%;
+  }
+  .chat-message.user {
+    background-color: #d4edda; /* Светло-зеленый */
+    align-self: flex-end;
+  }
+  .chat-message.bot {
+    background-color: #e0e0e0; /* Серый */
+    align-self: flex-start;
+  }
+  .chat-footer {
+    padding: 10px;
+    background-color: #eee;
+    border-top: 1px solid #ccc;
+    display: flex;
+    gap: 5px;
+  }
+  .chat-footer input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .chat-footer button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .chat-footer button:hover {
+    background-color: #1db018;
+  }
+  .chat-toggle-btn {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ab9224;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  .chat-toggle-btn img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  .chat-toggle-btn.hidden {
+    opacity: 0;
+    transform: scale(0);
+    pointer-events: none;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Эффект для всего экрана: мигание красным */
+.flash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:red;
+    z-index: 9999;
+    animation: flash-red-screen 0.5s infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes flash-red-screen {
+    0% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.2;
+    }
+}
+
+/* Анимация "падения" вниз */
+.fall-down {
+    animation: fall 5s forwards ease-in-out;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для секции услуг */
+.services {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.services-title {
+  font-size: 32px;
+  font-weight: bold;
+  color:black;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.services-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: blueviolet; /* Цвет линии под заголовком */
+  margin: 10px auto;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Чтобы элементы переносились на новую строку при уменьшении экрана */
+}
+
+.service-item {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.service-title {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.service-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.5;
+}
+
+
+
+
+
+
+
+
+
+
+/* Стили для секции "Свяжитесь с нами" */
+.contact-us {
+  background-color: #f4f4f4;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-title::after {
+  content: "";
+  display: block;
+  width: 250px;
+  height: 3px;
+  background-color: #6A5ACD;
+  margin: 10px auto;
+}
+
+.contact-description {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-input, .contact-textarea {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-input:focus, .contact-textarea:focus {
+  border-color: #6A5ACD;
+  box-shadow: 0 0 8px rgba(106, 90, 205, 0.5);
+}
+
+.contact-button {
+  background-color: #6A5ACD;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+  background-color: #5a4dbd;
+}
+
+
+
+
+
+.pravils{
+  color: #666;
+}
